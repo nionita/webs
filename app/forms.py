@@ -47,3 +47,16 @@ class ProfileEditForm(FlaskForm):
             user = User.query.filter_by(username=username.data).first()
             if user is not None:
                 raise ValidationError('Username already in use')
+
+class PostForm(FlaskForm):
+    post = TextAreaField('Say something', validators=[DataRequired(), Length(min=1, max=140)])
+    submit = SubmitField('Submit')
+
+class ResetPwdReqForm(FlaskForm):
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    submit = SubmitField('Request Password Reset')
+
+class ResetPasswordForm(FlaskForm):
+    password = PasswordField('Password', validators=[DataRequired()])
+    password2 = PasswordField('Repeat Password', validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField('Reset Password')
