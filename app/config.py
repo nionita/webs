@@ -26,5 +26,8 @@ class Config(object):
     # Add admins email adresses here:
     ADMINS = ['admin@localhost']
 
+    # Babel
+    LANGUAGES=['en', 'de']
+
     # Other
     POSTS_PER_PAGE=3
