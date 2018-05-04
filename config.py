@@ -6,8 +6,10 @@ Created on Mon Apr  2 13:10:46 2018
 """
 
 import os
+#from dotenv import load_dotenv
 
 basedir = os.path.abspath(os.path.dirname(__file__))
+#load_dotenv(os.path.join(basedir, '.env'))
 
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'never-be-the-same-again'
@@ -30,4 +32,4 @@ class Config(object):
     LANGUAGES=['en', 'de']
 
     # Other
-    POSTS_PER_PAGE=3
+    POSTS_PER_PAGE=5
